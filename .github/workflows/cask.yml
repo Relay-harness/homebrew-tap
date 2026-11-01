@@ -27,6 +27,8 @@ jobs:
       - name: Style
         run: brew style --cask relay-harness/tap/miso-track
       - name: Audit third-party cask
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: brew audit --cask --online relay-harness/tap/miso-track
       - name: Verify release download checksum
         run: brew fetch --cask relay-harness/tap/miso-track
