@@ -23,9 +23,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Register tap and test the proposed file, not only the default branch
-        run: |
-          brew tap relay-harness/tap
-          cp Casks/miso-track.rb "$(brew --repository relay-harness/tap)/Casks/miso-track.rb"
+        run: python3 Scripts/register-tap.py
       - name: Style
         run: brew style --cask relay-harness/tap/miso-track
       - name: Audit third-party cask
