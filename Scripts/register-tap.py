@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Register the public tap and audit the proposed cask, without launching Miso."""
+"""Register the public tap and audit the proposed cask, without launching Relay Cat."""
 from pathlib import Path
 import shutil
 import subprocess
@@ -10,9 +10,9 @@ trust_supported = subprocess.run(
     ["brew", "help", "trust"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
 ).returncode == 0
 if trust_supported:
-    subprocess.run(["brew", "trust", "--cask", "relay-harness/tap/miso-track"], check=True)
+    subprocess.run(["brew", "trust", "--cask", "relay-harness/tap/relay-cat"], check=True)
 tap = Path(subprocess.check_output(["brew", "--repository", "relay-harness/tap"], text=True).strip())
-shutil.copyfile(root / "Casks/miso-track.rb", tap / "Casks/miso-track.rb")
+shutil.copyfile(root / "Casks/relay-cat.rb", tap / "Casks/relay-cat.rb")
 exceptions = tap / "audit_exceptions"
 exceptions.mkdir(exist_ok=True)
 shutil.copyfile(
