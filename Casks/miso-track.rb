@@ -2,8 +2,7 @@ cask "miso-track" do
   version "1.8.0"
   sha256 "9924315ab47043e4296491d728c8031ac0619e5421bb39869e0cfa194d50b51c"
 
-  url "https://github.com/Relay-harness/miso-track/releases/download/v#{version}/Miso-#{version}-macos-arm64.zip",
-      verified: "github.com/Relay-harness/miso-track/"
+  url "https://github.com/Relay-harness/miso-track/releases/download/v#{version}/Miso-#{version}-macos-arm64.zip"
   name "Miso Track"
   desc "Menu-bar cat and subscription quota usage tracker"
   homepage "https://github.com/Relay-harness/miso-track"

@@ -54,3 +54,5 @@ For a new release, update the cask's version and independently verified ZIP SHA-
 Tap code: [MIT](LICENSE). The downloaded app retains its own MIT/third-party notices. A third-party tap is not an endorsement by Homebrew or Apple.
 
 Homebrew 7 automatically records trust for this specific cask when you run the fully qualified install command above. Standalone metadata commands such as `brew info`, `brew fetch` and `brew audit` can instead require `brew trust --cask relay-harness/tap/miso-track` first. That trusts this cask’s package definition, not every package in the tap, and is separate from macOS approval. Only grant it after reviewing the cask. CI grants only this narrow trust in its disposable runner.
+
+The only audit exception is `github_prerelease_allowlist.json`, pinned specifically to version 1.8.0 because this is intentionally a public preview. It does not waive SHA verification, quarantine or Apple trust. Update the exact version only after reviewing a new preview; remove the entry when distributing a stable release.

@@ -13,3 +13,9 @@ if trust_supported:
     subprocess.run(["brew", "trust", "--cask", "relay-harness/tap/miso-track"], check=True)
 tap = Path(subprocess.check_output(["brew", "--repository", "relay-harness/tap"], text=True).strip())
 shutil.copyfile(root / "Casks/miso-track.rb", tap / "Casks/miso-track.rb")
+exceptions = tap / "audit_exceptions"
+exceptions.mkdir(exist_ok=True)
+shutil.copyfile(
+    root / "audit_exceptions/github_prerelease_allowlist.json",
+    exceptions / "github_prerelease_allowlist.json",
+)
