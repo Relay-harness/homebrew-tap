@@ -1,0 +1,34 @@
+name: Cask
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: cask-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  audit:
+    name: Cask style, audit and download
+    runs-on: macos-latest
+    timeout-minutes: 20
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_ANALYTICS: 1
+    steps:
+      - name: Check out proposed cask
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Register tap and test the proposed file, not only the default branch
+        run: |
+          brew tap relay-harness/tap
+          cp Casks/miso-track.rb "$(brew --repository relay-harness/tap)/Casks/miso-track.rb"
+      - name: Style
+        run: brew style --cask relay-harness/tap/miso-track
+      - name: Audit third-party cask
+        run: brew audit --cask --online relay-harness/tap/miso-track
+      - name: Verify release download checksum
+        run: brew fetch --cask relay-harness/tap/miso-track
