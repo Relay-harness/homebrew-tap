@@ -1,16 +1,16 @@
-# Miso Track — Homebrew tap
+# Relay Cat (Miso) - Homebrew tap
 
-Official tap for [Miso Track](https://github.com/Relay-harness/miso-track), a native macOS menu-bar cat and subscription-quota usage dashboard.
+Official tap for [Relay Cat](https://github.com/Relay-harness/miso), a native macOS menu-bar cat and subscription-quota tracker that can optionally share data with [throttleindex.com](https://www.throttleindex.com).
 
 ## Install
 
 Requires [Homebrew](https://brew.sh/), Apple Silicon and macOS 14 or newer.
 
 ```sh
-brew install --cask relay-harness/tap/miso-track
+brew install --cask relay-harness/tap/relay-cat
 ```
 
-Then open **Miso** from Applications. Quit any older copy first. If an existing manual install occupies the destination, move that copy somewhere safe before retrying; do not use `--force` to overwrite it blindly. To install only for your macOS user, add `--appdir="$HOME/Applications"` to the command.
+Then open **Relay Cat** from Applications. The older `miso-track` cask (v1.8.0, app named Miso) stays available but does not connect to throttleindex.com. Quit any older copy first. If an existing manual install occupies the destination, move that copy somewhere safe before retrying; do not use `--force` to overwrite it blindly. To install only for your macOS user, add `--appdir="$HOME/Applications"` to the command.
 
 ### First-launch security warning
 
@@ -18,7 +18,7 @@ Then open **Miso** from Applications. Quit any older copy first. If an existing 
 
 If macOS says Apple cannot check the app for malicious software:
 
-1. Review the [source](https://github.com/Relay-harness/miso-track), [release notes and SHA256SUMS](https://github.com/Relay-harness/miso-track/releases/tag/v1.8.0). Homebrew verifies the ZIP against the cask's pinned SHA-256. A checksum is not independent proof of publisher identity.
+1. Review the [source](https://github.com/Relay-harness/miso), [release notes and SHA256SUMS](https://github.com/Relay-harness/miso/releases/tag/v1.9.0). Homebrew verifies the ZIP against the cask's pinned SHA-256. A checksum is not independent proof of publisher identity.
 2. Try to open Miso once. Dismiss the unverified-developer warning.
 3. **Only if you trust the build**, open **System Settings → Privacy & Security**, find the blocked Miso entry, choose **Open Anyway**, authenticate if asked, and confirm **Open**.
 

@@ -25,10 +25,10 @@ jobs:
       - name: Register tap and test the proposed file, not only the default branch
         run: python3 Scripts/register-tap.py
       - name: Style
-        run: brew style --cask relay-harness/tap/miso-track
+        run: brew style --cask relay-harness/tap/miso-track relay-harness/tap/relay-cat
       - name: Audit third-party cask
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
-        run: brew audit --cask --online relay-harness/tap/miso-track
+        run: brew audit --cask --online relay-harness/tap/miso-track relay-harness/tap/relay-cat
       - name: Verify release download checksum
-        run: brew fetch --cask relay-harness/tap/miso-track
+        run: brew fetch --cask relay-harness/tap/miso-track relay-harness/tap/relay-cat

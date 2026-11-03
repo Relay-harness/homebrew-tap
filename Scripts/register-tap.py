@@ -9,10 +9,13 @@ subprocess.run(["brew", "tap", "relay-harness/tap"], check=True)
 trust_supported = subprocess.run(
     ["brew", "help", "trust"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
 ).returncode == 0
+casks = sorted(path.stem for path in (root / "Casks").glob("*.rb"))
 if trust_supported:
-    subprocess.run(["brew", "trust", "--cask", "relay-harness/tap/miso-track"], check=True)
+    for cask in casks:
+        subprocess.run(["brew", "trust", "--cask", "relay-harness/tap/" + cask], check=True)
 tap = Path(subprocess.check_output(["brew", "--repository", "relay-harness/tap"], text=True).strip())
-shutil.copyfile(root / "Casks/miso-track.rb", tap / "Casks/miso-track.rb")
+for cask in casks:
+    shutil.copyfile(root / ("Casks/" + cask + ".rb"), tap / ("Casks/" + cask + ".rb"))
 exceptions = tap / "audit_exceptions"
 exceptions.mkdir(exist_ok=True)
 shutil.copyfile(
