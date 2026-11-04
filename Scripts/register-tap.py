@@ -22,3 +22,7 @@ shutil.copyfile(
     root / "audit_exceptions/github_prerelease_allowlist.json",
     exceptions / "github_prerelease_allowlist.json",
 )
+shutil.copyfile(root / "cask_renames.json", tap / "cask_renames.json")
+stale = tap / "Casks/miso-track.rb"
+if not (root / "Casks/miso-track.rb").exists() and stale.exists():
+    stale.unlink()

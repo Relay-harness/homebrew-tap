@@ -11,7 +11,6 @@ cask "relay-cat" do
     skip "Public previews are updated manually in this tap"
   end
 
-  conflicts_with cask: "miso-track"
   depends_on arch: :arm64
   depends_on macos: :sonoma
 

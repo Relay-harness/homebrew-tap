@@ -10,7 +10,7 @@ Requires [Homebrew](https://brew.sh/), Apple Silicon and macOS 14 or newer.
 brew install --cask relay-harness/tap/relay-cat
 ```
 
-Then open **Miso** from Applications. The older `miso-track` cask (v1.8.0, app named Miso) stays available but does not connect to throttleindex.com. Quit any older copy first. If an existing manual install occupies the destination, move that copy somewhere safe before retrying; do not use `--force` to overwrite it blindly. To install only for your macOS user, add `--appdir="$HOME/Applications"` to the command.
+Then open **Miso** from Applications. The old `miso-track` cask is renamed to `relay-cat`. If you had it installed, run `brew update && brew upgrade --cask` and Homebrew moves you over. Quit any older copy first. If an existing manual install occupies the destination, move that copy somewhere safe before retrying; do not use `--force` to overwrite it blindly. To install only for your macOS user, add `--appdir="$HOME/Applications"` to the command.
 
 ### First-launch security warning
 
