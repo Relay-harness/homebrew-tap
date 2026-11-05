@@ -1,6 +1,6 @@
 cask "relay-cat" do
-  version "1.9.6"
-  sha256 "cb497774af5119a395b3649b990f9215bfd6520f729a6252b0243fdcb5437a90"
+  version "1.9.7"
+  sha256 "1a06851e8f1a27b65764cef7f9dff50f7e8813d03843c9835fd63fbde80c6914"
 
   url "https://github.com/Relay-harness/miso/releases/download/v#{version}/Miso-#{version}-macos-arm64.zip"
   name "Miso"
@@ -25,10 +25,11 @@ cask "relay-cat" do
     Do not bypass a warning that says the app contains malware or will
     damage your computer. Do not disable Gatekeeper system-wide.
 
-    Miso shares rounded 5-hour and weekly usage with throttleindex.com
-    from the first launch and shows a one-time notice. A previously
-    revoked sharing choice stays off. Live usage can be public from one
-    reporting installation. To stop, open the popover's gear menu and
-    uncheck "Share usage with throttleindex".
+    Miso sends rounded 5-hour and weekly usage to throttleindex.com right
+    after install and then once a day, and shows a one-time notice. Every
+    Miso member is counted on the website; with one member, that member's
+    usage is visible. A previously revoked sharing choice stays off. To
+    stop, open the popover's gear menu and uncheck "Share usage with
+    throttleindex". Delete my shared readings removes what was sent.
   EOS
 end
