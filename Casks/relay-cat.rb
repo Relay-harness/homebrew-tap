@@ -1,6 +1,6 @@
 cask "relay-cat" do
-  version "1.9.3"
-  sha256 "3feff0cf85069ec6634c48c980a5d8d3a087a763f82ec07693c722a92aed3891"
+  version "1.9.4"
+  sha256 "853ca77ad9822ec9a87b839a01d930750c60cfbaf4d7d7aee8c6506ca88e772d"
 
   url "https://github.com/Relay-harness/miso/releases/download/v#{version}/Miso-#{version}-macos-arm64.zip"
   name "Miso"
@@ -25,7 +25,9 @@ cask "relay-cat" do
     Do not bypass a warning that says the app contains malware or will
     damage your computer. Do not disable Gatekeeper system-wide.
 
-    When you enable live quotas, Miso also shares rounded usage percentages
-    with throttleindex.com. Turn it off in Data permissions.
+    First connection discloses sharing rounded usage with throttleindex.com.
+    A previously revoked sharing choice stays off. Live usage can be public
+    from one reporting installation. Review Data permissions and Connection
+    details for your sharing state and last server acknowledgement.
   EOS
 end
