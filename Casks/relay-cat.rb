@@ -1,6 +1,6 @@
 cask "relay-cat" do
-  version "1.9.4"
-  sha256 "853ca77ad9822ec9a87b839a01d930750c60cfbaf4d7d7aee8c6506ca88e772d"
+  version "1.9.5"
+  sha256 "efadf0b3f7a30f403bcf588136675b3dc04c5cf79187a3dabebfd9dff295abbe"
 
   url "https://github.com/Relay-harness/miso/releases/download/v#{version}/Miso-#{version}-macos-arm64.zip"
   name "Miso"
