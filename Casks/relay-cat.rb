@@ -1,6 +1,6 @@
 cask "relay-cat" do
-  version "1.9.7"
-  sha256 "1a06851e8f1a27b65764cef7f9dff50f7e8813d03843c9835fd63fbde80c6914"
+  version "1.9.8"
+  sha256 "df4e4ddef4259e398b76c252fffaa549b2ce5fe83c6171eb5bdc0b677cde6f36"
 
   url "https://github.com/Relay-harness/miso/releases/download/v#{version}/Miso-#{version}-macos-arm64.zip"
   name "Miso"
@@ -31,5 +31,8 @@ cask "relay-cat" do
     usage is visible. A previously revoked sharing choice stays off. To
     stop, open the popover's gear menu and uncheck "Share usage with
     throttleindex". Delete my shared readings removes what was sent.
+
+    Miso opens at login so it is running when Claude or Codex starts.
+    Untick "Open at login" in the same menu to turn that off.
   EOS
 end
